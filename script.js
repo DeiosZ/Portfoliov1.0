@@ -18,7 +18,7 @@ const projectsData = [
         status: "progress",
         statusText: "En desarrollo",
         repo: "https://github.com/DeiosZ/ProjectNorthBack",
-        demo: "#"
+        demo: "https://deiosz.github.io/ProjectNorthBack_Front/"
     }
 ];
 
