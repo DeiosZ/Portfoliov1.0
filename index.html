@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,22 @@
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Mi CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleFloatingWhatsapp.css">
 </head>
+
 <body>
 
     <div class="developer">
         <div class="container developer-content">
             <h1>Vladimir Angelino</h1>
-            <p>Desarrollador <span class="highlight">Backend </span> | Java • Spring Boot • APIs</p>
+            <p>Desarrollador <span class="highlight">Backend</span> | Java • Spring Boot • APIs • React • JavaScript
+            </p>
             <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem auto;">
-                Ex docente de matemáticas convertido en programador. Busco mi primera experiencia práctica como desarrollador backend.
+                Pasé de resolver ecuaciones en un aula a resolver problemas reales con código. Hoy busco crecer como
+                desarrollador backend creando tecnología con impacto.
             </p>
             <a href="#projects" class="btn">Ver proyectos</a>
             <a href="#contact" class="btn btn-outline">Contacto</a>
@@ -26,21 +31,24 @@
     </div>
 
     <div class="container">
-        
+
         <section id="projects">
-            <h2 class="section-title">Proyectos Backend</h2>
-            <div class="projects-grid" id="projects-container">
-                
+            <h2 class="section-title">Mis Proyectos</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
             </div>
+            
+            <div class="projects-grid" id="projects-container"></div>
         </section>
 
-       
         <section id="skills">
             <h2 class="section-title">Tecnologías</h2>
             <div class="skills-grid" id="skills-container"></div>
         </section>
 
-        
         <section id="experience">
             <h2 class="section-title">Trayectoria</h2>
             <div class="exp-item">
@@ -49,7 +57,8 @@
             </div>
             <div class="exp-item">
                 <i class="fas fa-chalkboard-teacher" style="color:#a855f7; margin-right:10px;"></i>
-                <strong>Docente de Matemáticas y Programación</strong> – 4+ años de experiencia (secundaria, preuniversitario)
+                <strong>Docente de Matemáticas y Programación</strong> – 4+ años de experiencia (secundaria,
+                preuniversitario)
             </div>
             <div class="exp-item">
                 <i class="fas fa-graduation-cap" style="color:#a855f7; margin-right:10px;"></i>
@@ -57,7 +66,6 @@
             </div>
         </section>
 
-        <!-- Contacto -->
         <section id="contact">
             <h2 class="section-title">Conectemos</h2>
             <div style="text-align: center;">
@@ -73,10 +81,22 @@
     </div>
 
     <footer>
-        <p>© 2026 Vladimir Angelino | Backend Developer </p>
+        <p>© 2026 Vladimir Angelino | Backend Developer</p>
     </footer>
 
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <div class="whatsapp-tooltip" id="whatsappTooltip">
+            <i class="fab fa-whatsapp"></i> ¿Agendamos una reunión?
+        </div>
+        <a href="#" id="whatsappButton" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
+    <!-- Scripts -->
+    <script src="FloatingWhatsapp.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -18,7 +18,6 @@ body {
     padding: 0 20px;
 }
 
-
 .developer {
     min-height: 100vh;
     display: flex;
@@ -105,7 +104,7 @@ section {
     border-radius: 2px;
 }
 
-/* Tarjetas de proyectos */
+/* Tarjetas de proyectos - CON ALTURA UNIFORME */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -120,6 +119,9 @@ section {
     padding: 25px;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -137,6 +139,11 @@ section {
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+}
+
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
 }
 
 .project-tech {
@@ -161,6 +168,7 @@ section {
     font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 15px;
+    align-self: flex-start;
 }
 
 .status-complete {
@@ -173,20 +181,40 @@ section {
     color: white;
 }
 
+/* Botones de demo - SIEMPRE AL FINAL */
 .project-links {
     margin-top: 20px;
+    margin-bottom: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .project-links a {
-    color: #c084fc;
-    margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 25px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.project-links a:hover {
+.project-links .demo-link {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    width: 100%;
+}
+
+.project-links .demo-link:hover {
+    background: #10b981;
     color: white;
+    transform: translateY(-2px);
 }
 
 /* Tecnologías */
@@ -253,7 +281,7 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-content h1 {
+    .developer-content h1 {
         font-size: 2.2rem;
     }
     .section-title {
@@ -262,4 +290,81 @@ footer {
     .btn {
         margin: 10px;
     }
+    .project-links {
+        flex-direction: column;
+    }
+    .project-links a {
+        justify-content: center;
+    }
+}
+
+/* Botones de filtro */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 10px 24px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter-btn:hover {
+    background: rgba(168, 85, 247, 0.3);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #a855f7;
+    border-color: #a855f7;
+}
+
+/* Ajustes para las tarjetas */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card p {
+    flex-grow: 1;
+}
+
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.project-links .demo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    width: 100%;
+}
+
+.project-links .demo-link:hover {
+    background: #10b981;
+    color: white;
+    transform: translateY(-2px);
 }
